@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import AboutBackground from "../Assets/about-background.png";
-import AboutBackgroundImage from "../Assets/about-background-image.png";
-
-import { signUp, login } from "../Services/user_service";
+import AboutBackground from "../../Assets/about-background.png";
+import AboutBackgroundImage from "../../Assets/about-background-image.png";
+import { signUp, login } from "../../Services/user_service";
 
 const Login_Register = () => {
   const [email, setEmail] = useState('');

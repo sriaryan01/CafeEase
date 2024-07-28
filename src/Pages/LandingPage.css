@@ -150,6 +150,8 @@ nav {
   cursor: pointer;
   font-weight: 600;
   transition: 0.2s;
+  /* box-shadow: 0 0 30px rgba(254, 158, 13,1); */
+  box-shadow: 0 0 30px rgba(0, 0, 0,.2);
 
 }
 
