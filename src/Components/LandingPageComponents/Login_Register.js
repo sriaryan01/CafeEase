@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import AboutBackground from "../../Assets/about-background.png";
 import AboutBackgroundImage from "../../Assets/about-background-image.png";
 import { signUp, login } from "../../Services/user_service";
+import { useNavigate } from "react-router-dom";
 
 const Login_Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
+
+  const navigate = useNavigate();
 
 
   const handleLoginSubmit = (e) => {
@@ -24,6 +27,7 @@ const Login_Register = () => {
     login(loginDetails).then((resp) => {
       console.log(resp);
       console.log("Success log");
+      navigate('/dashboard');
       // Redirect or perform other actions after successful login
     }).catch((error) => {
       console.log(error);

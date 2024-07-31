@@ -1,4 +1,4 @@
-import "./LandingPage.css";
+import "../CSS/LandingPage.css";
 import Home from "../Components/LandingPageComponents/Home";
 import Login_Register from "../Components/LandingPageComponents/Login_Register";
 import Work from "../Components/LandingPageComponents/Work";

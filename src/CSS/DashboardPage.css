@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+    scroll-behavior: smooth
+}
+
+.App {
+    min-height: 100vh;
+    width: 85vw;
+    max-width: 1900px;
+    margin: 0rem auto;
+  }
+  
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    background-color: #f6f6f6;
+  }
+
+.Home {
+
+    padding-top: 100px;
+    width: 85vw;
+    /* background-color: aqua; */
+    /* overflow: hidden; */
+}
+
+.primary-sub-heading {
+    font-size: 25px;
+    color: #fe9e0d;
+}
+
+.primary-heading {
+    font-size: 50px;
+    /* max-width: fit-content; */
+}
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.Card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 350px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ProductName {
+    margin: 0;
+    color: #fe9e0d;
+    font-size: 2em;
+}
+
+.ProductDescription {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.ProductPrice {
+    font-size: 1.1em;
+    color: #000;
+    font-weight: bold;
+}
+
+.CategoryName {
+    font-size: 0.9em;
+    color: #007bff;
+}
+
+
+nav {
+    display: flex;
+    /* margin-left: auto;
+    margin-right: auto; */
+    position: relative;
+    padding-left: 10px;
+    left: 5vw;
+    right: 5vw;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    width: 90vw;
+  
+    border: 2px solid #ddd;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  .navbar-menu-container {
+    display: none;
+  }
+  
+  .navbar-links-container a {
+    margin-right: 3rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+  
+  }
+  
+  .navbar-links-container :hover {
+    color: #fe9e0d;
+  }
+  
+  .primary-button {
+    padding: 0.9rem 1.75rem;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+    /* box-shadow: 0 0 30px rgba(254, 158, 13,1); */
+    box-shadow: 0 0 30px rgba(0, 0, 0,.2);
+  
+  }
+  
+  .navbar-cart-icon {
+    font-size: 1.15rem;
+  }
+  
+  .primary-button:hover {
+    background-color: #fe9e0d;
+    color: #f6f6f6;
+  
+  }
+  
+  .navbar-menu-container svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }

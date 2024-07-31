@@ -1,0 +1,126 @@
+.navbar{
+    border-radius: 0%;
+    /* border: 3px dashed limegreen; */
+    width: 100%;
+    position: fixed;
+    top :0px;
+    left: -2px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: #000;
+    
+    
+}
+
+.btn-group-item{
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    color:white;
+    background-color:black;
+    border: none;
+    text-transform: capitalize;
+}
+
+.btn-group-item:hover{
+    border-bottom: 5px solid #127a60;
+    background-color: darkseagreen;
+
+    font-size: 25px;
+}
+
+.main-card-container{
+    background-color:#d9ffb3;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body{
+    background-color: whitesmoke;
+    padding: 20px;
+    margin: 30px;
+    width: 25vw;
+    border-radius: 5%;
+    border: 2px dashed limegreen;
+}
+
+.card-number{
+    font-size: 30px;
+    font-weight: bold;
+    
+    
+}
+
+.card-circle{
+    width: 50px;
+    height: 50px;
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+
+.subtle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.card-author{
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+}
+
+
+
+.card-title{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 60px;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.card-read{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    margin: 5px 0 20px;
+    border-bottom: 2px solid #b8bddd;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+/* .card-read:after{
+    background-color: #b8bddd;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    width: 75%;
+} */
+
+.card-tag{
+    float: right;
+    margin: 5px 0 0;
+    border: 2px solid #fe9e0d;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 15%;
+}
+
+.card-tag:hover{
+    background: #585858;
+    color: white;
+}
+
+.card-media{
+    max-width: 100%;
+    height: 200px;
+    width: 18vw;
+}
