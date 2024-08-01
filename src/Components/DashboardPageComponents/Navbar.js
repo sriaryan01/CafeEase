@@ -15,6 +15,12 @@ import InfoIcon from "@mui/icons-material/Info";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
+
+import {logout} from "../../Services/user_service";
+import { useNavigate } from "react-router-dom";
+import LandingPage from "../../Pages/LandingPage";
+
+
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
@@ -35,8 +41,18 @@ const Navbar = () => {
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
+
+  const navigate = useNavigate();
+
+const handleLogout=(e)=>{
+  logout();
+  navigate('/');
+  console.log("Logout Successfull");
+};
+  
   return (
     <nav>
+      
       <div className="nav-logo-container">
         <img src={icon} alt="CafeEase" width={200} />
       </div>
@@ -47,7 +63,7 @@ const Navbar = () => {
         <a href="#Login">
           <BsCart2 className="navbar-cart-icon" />
         </a>
-        <a href="#Login"><button className="primary-button" type="submit" formaction="#Login">Login/Sign up</button></a>
+        <a href=""><button className="primary-button" onClick={handleLogout}>Logout</button></a>
 
       </div>
       <div className="navbar-menu-container">

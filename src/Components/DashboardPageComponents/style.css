@@ -1,6 +1,5 @@
-.navbar{
+/* .navbar{
     border-radius: 0%;
-    /* border: 3px dashed limegreen; */
     width: 100%;
     position: fixed;
     top :0px;
@@ -95,15 +94,6 @@
     text-transform: uppercase;
 }
 
-/* .card-read:after{
-    background-color: #b8bddd;
-    content: "";
-    display: block;
-    height: 1px;
-    position: absolute;
-    top: 9px;
-    width: 75%;
-} */
 
 .card-tag{
     float: right;
@@ -123,4 +113,4 @@
     max-width: 100%;
     height: 200px;
     width: 18vw;
-}
+} */

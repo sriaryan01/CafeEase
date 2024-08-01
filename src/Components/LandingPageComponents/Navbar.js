@@ -29,10 +29,6 @@ const Navbar = () => {
       text: "About",
       icon: <InfoIcon />,
     },
-    // {
-    //   text: "Testimonials",
-    //   icon: <CommentRoundedIcon />,
-    // },
     {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
@@ -40,26 +36,27 @@ const Navbar = () => {
     {
       text: "Cart",
       icon: <ShoppingCartRoundedIcon />,
-    },
+    }
   ];
   return (
     <nav>
       <div className="nav-logo-container">
         <img src={icon} alt="CafeEase" width={200} />
       </div>
+
       <div className="navbar-links-container">
         <a href="#Home">Home</a>
         <a href="" >Categories</a>
         <a href="#Contact">Contact</a>
-        <a href="#Login">
-          <BsCart2 className="navbar-cart-icon" />
-        </a>
         <a href="#Login"><button className="primary-button" type="submit" formaction="#Login">Login/Sign up</button></a>
-
       </div>
+
+
       <div className="navbar-menu-container">
+        
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
+      
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
         <Box
           sx={{ width: 250 }}

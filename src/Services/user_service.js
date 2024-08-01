@@ -19,6 +19,7 @@ export const login = async (payload) => {
                 const token = tokenMatch[1];
                 // Store the token in a cookie
                 Cookies.set('token', token, { expires: 1, path: '' });
+                
                 return data.message;
             }
             return data;
@@ -32,7 +33,11 @@ export const login = async (payload) => {
     }
 };
 
-// Function to get the JWT token from cookies
 export const getToken = () => {
     return Cookies.get('token');
 };
+
+export const logout=()=>{
+    Cookies.remove('token');
+    console.log("Token deleted");
+}

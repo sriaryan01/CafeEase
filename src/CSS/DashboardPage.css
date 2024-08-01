@@ -11,6 +11,7 @@
     width: 85vw;
     max-width: 1900px;
     margin: 0rem auto;
+    
   }
   
   body {
@@ -26,23 +27,32 @@
 
     padding-top: 100px;
     width: 85vw;
+    text-wrap: nowrap;
+    /* overflow: hidden; */
+    
+    
     /* background-color: aqua; */
     /* overflow: hidden; */
 }
 
 .primary-sub-heading {
-    font-size: 25px;
+    font-size: 35px;
     color: #fe9e0d;
+    font-weight: 700;
 }
 
 .primary-heading {
-    font-size: 50px;
-    /* max-width: fit-content; */
+  font-size: 55px;
+  color: #4c4c4c;
+  font-weight: 900;
 }
 
-.Container {
+.product-container {
     display: flex;
-    flex-wrap: wrap;
+    /* width: 85vw; */
+
+    /* background-color: #007bff; */
+    flex-wrap:wrap;
     justify-content: center;
     padding: 20px;
 }
@@ -52,9 +62,29 @@
     border-radius: 8px;
     padding: 16px;
     margin: 16px;
-    width: 350px;
-
+    width: 380px;
+    background-color: rgba(0, 0, 0,0.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Card:hover{
+  background-color: #f6f6f6;
+  box-shadow: none;
+  border: 1px solid #666;
+}
+
+.card-tag{
+  float: right;
+  margin: 5px 0 0;
+  border: 2px solid #fe9e0d;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.card-tag:hover{
+  background-color: #fe9e0d;
+  color: white;
 }
 
 .ProductName {
@@ -104,6 +134,7 @@ nav {
   
   .navbar-menu-container {
     display: none;
+    padding-right: 30px;
   }
   
   .navbar-links-container a {
@@ -147,4 +178,157 @@ nav {
   .navbar-menu-container svg {
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    .navbar-links-container a {
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+  
+    .primary-button {
+      font-size: 1rem;
+    }
+  
+    .home-bannerImage-container {
+      max-width: 600px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .nav-logo-container {
+      max-width: 140px;
+      padding-top: 10px;
+      padding-left: 10px;
+  
+  
+    }
+  
+    .navbar-links-container {
+      display: none;
+    }
+  
+    .navbar-menu-container {
+      display: flex;
+    }
+  
+    .home-bannerImage-container {
+      max-width: 450px;
+    }
+  
+    .home-banner-container,
+    .login-section-container {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .login-section-container {
+      flex-direction: column;
+    }
+  
+    .home-image-section,
+    .login-section-image-container {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .primary-heading {
+      text-align: center;
+      max-width: 90%;
+    }
+  
+    .primary-text {
+      text-align: center;
+      max-width: 80%;
+    }
+  
+    .home-text-section,
+    .login-section-text-container {
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+    }
+  
+    .secondary-button {
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+    }
+  
+    .login-section-container {
+      margin-top: 5rem !important;
+    }
+  
+    .login-buttons-container {
+      justify-content: center;
+      flex-direction: column;
+    }
+  
+    .primary-subheading {
+      text-align: center;
+    }
+  
+    .watch-video-button {
+      margin-left: 0rem !important;
+      margin-top: 1rem;
+      font-size: 1rem !important;
+    }
+  
+    .watch-video-button svg {
+      margin-right: 0.5rem !important;
+    }
+  
+    .login-section-image-container {
+      margin-right: 0rem !important;
+    }
+  
+    .work-section-wrapper {
+      margin-top: 5rem !important;
+    }
+  
+    .work-section-bottom {
+      margin-top: 1rem !important;
+    }
+  
+    .contact-form-container {
+      padding: 0.5rem !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem !important;
+    }
+  
+    .contact-form-container input {
+      font-size: 1rem !important;
+      max-width: 100%;
+      padding: 0.5rem 1rem !important;
+      margin-bottom: 0.8rem !important;
+      text-align: center;
+    }
+  
+    .footer-wrapper {
+      flex-direction: column;
+    }
+  
+    .footer-section-two {
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+  
+    .footer-section-columns {
+      margin: 1rem 0rem;
+    }
+  
+    .App {
+      max-width: 95vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+  
+    .home-bannerImage-container,
+    .login-background-image-container {
+      display: none;
+    }
   }
