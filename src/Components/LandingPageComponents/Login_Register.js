@@ -4,6 +4,10 @@ import AboutBackgroundImage from "../../Assets/about-background-image.png";
 import { signUp, login } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
+
 const Login_Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,8 +16,9 @@ const Login_Register = () => {
 
   const navigate = useNavigate();
 
+  const notify = () => toast("Wow so easy!");
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
     console.log('Email:', email);
@@ -27,11 +32,13 @@ const Login_Register = () => {
     login(loginDetails).then((resp) => {
       console.log(resp);
       console.log("Success log");
+      // toast.success("Login Successfull");
       navigate('/dashboard');
       // Redirect or perform other actions after successful login
     }).catch((error) => {
       console.log(error);
       console.log("Error log");
+      // toast.error("Wrong id or password");
     });
   };
 
@@ -53,10 +60,13 @@ const Login_Register = () => {
 
     signUp(payload).then((resp) => {
       console.log(resp);
+      
       console.log("Success log");
+
     }).catch((error) => {
       console.log(error);
       console.log("Error log")
+      toast.error("heyy");
     })
   };
 
@@ -91,6 +101,8 @@ const Login_Register = () => {
             Login.....
           </h1>
           <div className="form login-form">
+            
+            
             <form onSubmit={handleLoginSubmit}>
               <div>
                 <label htmlFor="email">Email:</label>

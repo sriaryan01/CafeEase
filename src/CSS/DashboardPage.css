@@ -73,8 +73,30 @@
   border: 1px solid #666;
 }
 
-.card-tag{
+.addCartOptions{
+  display: flex;
   float: right;
+}
+
+.ProductQuantity{
+  /* float: right; */
+  width: 60px;
+  margin: 5px 5px 0;
+  border: 2px solid #fe9e0d;
+  justify-content: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  flex-wrap: wrap-reverse;
+}
+
+.ProductQuantity:focus{
+  border: 2px solid #fe9e0d;
+  outline: none;
+}
+
+.card-tag{
+  /* float: right; */
   margin: 5px 0 0;
   border: 2px solid #fe9e0d;
   padding: 5px 10px;
@@ -108,7 +130,6 @@
     font-size: 0.9em;
     color: #007bff;
 }
-
 
 nav {
     display: flex;

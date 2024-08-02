@@ -8,9 +8,13 @@ import Products from '../Components/DashboardPageComponents/Products';
 import Orders from '../Components/DashboardPageComponents/Orders';
 import Footer from '../Components/DashboardPageComponents/Footer';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Dashboard = () => {
   return (
     <div className="App" >
+      <ToastContainer/>
       <Navbar />
 
       <Home />
