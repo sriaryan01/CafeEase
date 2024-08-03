@@ -9,7 +9,6 @@ const Footer = () => {
     <div className="footer-wrapper">
       <div className="footer-section-one">
         <div className="footer-logo-container">
-          {/* <img src={Logo} alt="" /> */}
           <p id="logo-name">CafeEase</p>
         </div>
         <div className="footer-icons">
@@ -32,7 +31,6 @@ const Footer = () => {
           <span>+91 1111111111</span>
           <span>Admin Email</span>
           <span>Owner Email</span>
-          {/* <span>contact@food.com</span> */}
         </div>
         <div className="footer-section-columns">
           <span>Terms  &  Conditions</span>

@@ -17,25 +17,33 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import LoginIcon from '@mui/icons-material/Login';
+import Category from '@mui/icons-material/LocalDining';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
+      
       text: "Home",
+      href:"#Home",
       icon: <HomeIcon />,
     },
     {
-      text: "About",
-      icon: <InfoIcon />,
+      
+      text: "Category",
+      href:"#Category",
+      icon: <Category />,
     },
     {
       text: "Contact",
+      href:"#Contact",
       icon: <PhoneRoundedIcon />,
     },
     {
-      text: "Cart",
-      icon: <ShoppingCartRoundedIcon />,
+      text: "Login/Signup",
+      href:"#Login",
+      icon: <LoginIcon />,
     }
   ];
   return (
@@ -46,7 +54,7 @@ const Navbar = () => {
 
       <div className="navbar-links-container">
         <a href="#Home">Home</a>
-        <a href="" >Categories</a>
+        <a href="#Category" >Categories</a>
         <a href="#Contact">Contact</a>
         <a href="#Login"><button className="primary-button" type="submit" formaction="#Login">Login/Sign up</button></a>
       </div>
@@ -67,7 +75,7 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton href={item.href}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>

@@ -8,6 +8,7 @@ export const signUp = (payload) => {
     return myAxios
         .post("/user/signup", payload)
         .then((response) => response.data);
+        
 };
 
 export const login = async (payload) => {
@@ -15,8 +16,6 @@ export const login = async (payload) => {
     try {
         const response =  await myAxios.post("user/login", payload);
         const data = response.data;
-
-        console.log("hereeeeeee");
         console.log(data.message);
         // Extract token from the response message
         if (data.message) {
@@ -35,8 +34,8 @@ export const login = async (payload) => {
         throw new Error('Token not found in response');
 
     } catch (error) {
-        toast.error("heyyyyyy");
-        console.error('Login error:', error);
+        toast.error("Something went wrong");
+        console.log('Login error:', error);
         throw error;
     }
 };
@@ -48,4 +47,5 @@ export const getToken = () => {
 export const logout=()=>{
     Cookies.remove('token');
     console.log("Token deleted");
+    toast.success("Logged out successfully");
 }

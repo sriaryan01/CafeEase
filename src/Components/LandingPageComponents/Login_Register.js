@@ -5,7 +5,7 @@ import { signUp, login } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login_Register = () => {
@@ -62,11 +62,12 @@ const Login_Register = () => {
       console.log(resp);
       
       console.log("Success log");
+      toast.success("User registered successfully");
 
     }).catch((error) => {
       console.log(error);
       console.log("Error log")
-      toast.error("heyy");
+      toast.error("Something went wrong");
     })
   };
 
@@ -84,7 +85,7 @@ const Login_Register = () => {
 
 
   return (
-    <div className="login-section-container" id="Login">
+    <div className="login-section-container" >
 
       <div className="login-background-image-container">
         <img src={AboutBackground} alt="" />
@@ -94,7 +95,7 @@ const Login_Register = () => {
         <img src={AboutBackgroundImage} alt="" />
       </div>
 
-      <div className={`container ${action}`}>
+      <div className={`container ${action}`} id="Login">
 
         <div className="login">
           <h1 className="primary-heading">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import icon from "../../Assets/Icon.png"
-
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -14,11 +13,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-
-
-import {logout} from "../../Services/user_service";
+import { logout } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
-import LandingPage from "../../Pages/LandingPage";
 
 
 const Navbar = () => {
@@ -44,26 +40,26 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-const handleLogout=(e)=>{
-  logout();
-  navigate('/');
-  console.log("Logout Successfull");
-};
-  
+  const handleLogout = (e) => {
+    logout();
+    navigate('/');
+    console.log("Logout Successfull");
+  };
+
   return (
     <nav>
-      
+
       <div className="nav-logo-container">
         <img src={icon} alt="CafeEase" width={200} />
       </div>
       <div className="navbar-links-container">
         <a href="#Home">Home</a>
-        <a href="" >Categories</a>
+        <a href="#Products" >Categories</a>
         <a href="#Contact">Contact</a>
         <a href="#Login">
           <BsCart2 className="navbar-cart-icon" />
         </a>
-        <a href=""><button className="primary-button" onClick={handleLogout}>Logout</button></a>
+        <a href="#Logout"><button className="primary-button" onClick={handleLogout}>Logout</button></a>
 
       </div>
       <div className="navbar-menu-container">
@@ -86,7 +82,6 @@ const handleLogout=(e)=>{
               </ListItem>
             ))}
           </List>
-          {/* <Divider /> */}
         </Box>
       </Drawer>
     </nav>

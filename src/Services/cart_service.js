@@ -1,10 +1,8 @@
 // App.js
 import { myAxios } from "./helper";
-// import MenuCard from '../Components/DashboardPageComponents/menuCard';
 
 export const handleAddToCart = async(productId, quantity) => {
-    console.log(productId);
-    console.log(quantity);
+
     let items = getListOfItem(productId, quantity)
     try {
       const response = await myAxios.put("/cart", items);
@@ -24,3 +22,15 @@ export const handleAddToCart = async(productId, quantity) => {
         }
     ];
 };
+
+export const fetchCart = async() =>{
+    try {
+        const response = await myAxios.get("/cart");
+        const data = response.data.data;  // Accessing the cart
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching cart:', error);
+        throw error;
+    }
+}

@@ -32,7 +32,6 @@ const Footer = () => {
           <span>+91 1111111111</span>
           <span>Admin Email</span>
           <span>Owner Email</span>
-          {/* <span>contact@food.com</span> */}
         </div>
         <div className="footer-section-columns">
           <span>Terms  &  Conditions</span>

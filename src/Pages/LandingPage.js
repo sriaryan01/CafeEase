@@ -1,7 +1,7 @@
 import "../CSS/LandingPage.css";
 import Home from "../Components/LandingPageComponents/Home";
 import Login_Register from "../Components/LandingPageComponents/Login_Register";
-import Work from "../Components/LandingPageComponents/Work";
+import Category from "../Components/LandingPageComponents/Category";
 import Contact from "../Components/LandingPageComponents/Contact";
 import Footer from "../Components/LandingPageComponents/Footer";
 import Navbar from "../Components/LandingPageComponents/Navbar";
@@ -15,7 +15,7 @@ function LandingPage() {
       <Navbar />
       <Home />
       <Login_Register />
-      <Work />
+      <Category />
       <Contact />
       <Footer />
     </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { productList } from '../../Services/product_service';
 import MenuCard from './menuCard';
 import BannerBackground from "../../Assets/home-banner-background.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -17,7 +19,7 @@ const Products = () => {
         setLoading(false);
 
       } catch (error) {
-        setError(error);
+        toast.error("Error fetching products");
         setLoading(false);
         console.log("Error while fetching products");
       }

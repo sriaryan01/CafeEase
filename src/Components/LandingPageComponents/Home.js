@@ -5,12 +5,12 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
   return (
-    <div className="home-container" id="Home">
+    <div className="home-container" >
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
           <img src={BannerBackground} alt="" />
         </div>
-        <div className="home-text-section">
+        <div className="home-text-section" id="Home">
           <h1 className="primary-heading">
             Welcome to CafeEase!
           </h1>
