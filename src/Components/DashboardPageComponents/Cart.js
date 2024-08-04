@@ -5,6 +5,7 @@ import useDebounce from '../../Services/helper';
 import { toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BannerBackground from "../../Assets/home-banner-background.png";
+import EmptyCart from "../../Assets/emptycart.svg";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -30,7 +31,7 @@ const Cart = () => {
   }, []);
 
   const handlePlaceOrder = async () =>{
-    
+
     await placeOrderFromCart() 
     toast.success("Order Placed", {
       theme: "dark"
@@ -52,38 +53,59 @@ const Cart = () => {
   return (
 
     <div className='cart-container'>
-      {
-        IsCartEmpty(cart.items) ? <h1>No Items in Cart</h1> : <h2>Your Cart</h2>
-      }
-      <div className="home-bannerImage-container">
-        <img src={BannerBackground} alt="" />
+
+      <div className="home-bannerImage-container bg-container">
+        <img src={BannerBackground} alt="" className='backgoround-img'/>
       </div>
-      
+
       <div className='inner-cart-container'>
-        
+        {
+          IsCartEmpty(cart) ? (
+            <>
+              <div className="cart-img" style={{
+                backgroundImage: `url(${EmptyCart})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '70vh',
+                width: '100vw',
+              }}>
+              </div>
+              <div className='total-container'>
+                <div className='left-side'>
+                  <div className='PricePerUnit'>Total Amount - <p className='ProductPrice'>INR 0</p></div>
+                </div>
+                <div className='right-side'>
+                  <button className='card-tag place-ordr-btn subtle' onClick={handlePlaceOrder} disabled >Place Order</button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <h2>Your Cart</h2>
+              {cart.items.map(item => (
+                <CartItems key={item.productId} item={item} setCart={setCart} />
+              ))}
 
-        {cart.items.map(item => (
-          <CartItems key={item.productId} item={item} setCart={setCart} />
-        ))}
-
-        <div className='total-container'>
-          <div className='left-side'>
-            <div className='PricePerUnit'>Total Amount - <p className='ProductPrice'>INR {cart.totalAmount}</p></div>
-          </div>
-          <div className='right-side'>
-            <button className='card-tag place-ordr-btn subtle' onClick={handlePlaceOrder} disabled={IsCartEmpty(cart.items)} >Place Order</button>        
-          </div>
-        </div>
-
+              <div className='total-container'>
+                <div className='left-side'>
+                  <div className='PricePerUnit'>Total Amount - <p className='ProductPrice'>INR {cart.totalAmount}</p></div>
+                </div>
+                <div className='right-side'>
+                  <button className='card-tag place-ordr-btn subtle' onClick={handlePlaceOrder} disabled={IsCartEmpty(cart)} >Place Order</button>
+                </div>
+              </div>
+            </>
+          )
+        }
       </div>
 
     </div>
   );
 };
 
-const IsCartEmpty = (items) =>{
-  console.log(items.length)
-  return items.length === 0
+const IsCartEmpty = (cart) =>{
+  // console.log(items.length)
+  return cart == null || cart.items == null || cart.items.length === 0
 }  
 
 const CartItems = ({ item, setCart }) => {
@@ -104,7 +126,7 @@ const CartItems = ({ item, setCart }) => {
   };
 
   const handleQuantityChange = async (qty) => {
-      
+
       // toast.success("Quantity updated...", {
       //   theme: "dark"
       // });
