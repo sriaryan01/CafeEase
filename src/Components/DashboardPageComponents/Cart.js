@@ -60,6 +60,7 @@ const Cart = () => {
       <div className="home-bannerImage-container bg-container">
         <img src={BannerBackground} alt="" className='backgoround-img'/>
       </div>
+      <h1>Your Cart : </h1>
 
       <div className='inner-cart-container'>
         {
@@ -84,7 +85,6 @@ const Cart = () => {
             </>
           ) : (
             <>
-              <h2>Your Cart</h2>
               {cart.items.map(item => (
                 <CartItems key={item.productId} item={item} setCart={setCart} />
               ))}
