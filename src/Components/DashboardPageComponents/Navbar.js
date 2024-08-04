@@ -46,6 +46,10 @@ const Navbar = () => {
     console.log("Logout Successfull");
   };
 
+  const handleGoToCart=()=>{
+    navigate("/cart");
+  };
+
   return (
     <nav>
 
@@ -56,10 +60,10 @@ const Navbar = () => {
         <a href="#Home">Home</a>
         <a href="#Products" >Categories</a>
         <a href="#Contact">Contact</a>
-        <a href="#Login">
+        <a href="#Login" onClick={handleGoToCart}>
           <BsCart2 className="navbar-cart-icon" />
         </a>
-        <a href="#Logout"><button className="primary-button" onClick={handleLogout}>Logout</button></a>
+        <a href="/cart"><button className="primary-button" onClick={handleLogout}>Logout</button></a>
 
       </div>
       <div className="navbar-menu-container">

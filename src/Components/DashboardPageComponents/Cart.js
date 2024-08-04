@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchCart, handleAddToCart } from '../../Services/cart_service';
 import { toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BannerBackground from "../../Assets/home-banner-background.png";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -35,16 +36,18 @@ const Cart = () => {
   }
 
   return (
-
+    <div className='cart-container'>
     <div className='card-container'>
+      <div className="home-bannerImage-container">
+      <img src={BannerBackground} alt="" />
+    </div>
       <div>Your Cart</div>
-
       <div>
         {cart.items.map(item => (
           <CartItems key={item.productId} item={item} setCart={setCart} />
         ))}
       </div>
-
+    </div>
     </div>
   );
 };

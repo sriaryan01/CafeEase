@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AboutBackground from "../../Assets/about-background.png";
-import AboutBackgroundImage from "../../Assets/about-background-image.png";
+import AboutBackground from "../../Assets/login-background.png";
+import AboutBackgroundImage from "../../Assets/login-background-image.png";
 import { signUp, login } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
 

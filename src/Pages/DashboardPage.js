@@ -8,13 +8,13 @@ import Orders from '../Components/DashboardPageComponents/Orders';
 import Cart from '../Components/DashboardPageComponents/Cart';
 import Footer from '../Components/DashboardPageComponents/Footer';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = () => {
   return (
     <div className="App" >
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
       <Navbar />
 
       <Home />

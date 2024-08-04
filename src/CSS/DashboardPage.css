@@ -131,10 +131,15 @@
     font-size: 0.9em;
     color: #007bff;
 }
-
+.cart-container{
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .card-container{
-  /* display: flex; */
-    /* width: 85vw; */
+  display: flex;
+    width: 85vw;
 
     /* background-color: #007bff; */
     flex-wrap:wrap;

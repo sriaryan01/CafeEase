@@ -39,9 +39,10 @@ const Products = () => {
   return (
 
     <div className='product-container'>
-      {/* <div className="home-bannerImage-container">
+      
+      <div className="home-bannerImage-container">
         <img src={BannerBackground} alt="" />
-      </div> */}
+      </div>
       {products.map(product => (
         <MenuCard key={product.id} product={product} />
       ))}

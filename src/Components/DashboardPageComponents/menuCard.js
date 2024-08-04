@@ -1,7 +1,6 @@
 // MenuCard.js
 import React, { useState } from 'react';
 import "../../CSS/DashboardPage.css";
-import "./style.css";
 import { handleAddToCart } from "../../Services/cart_service"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
