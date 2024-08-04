@@ -40,6 +40,11 @@ const Navbar = () => {
       href:"/cart",
       icon: <ShoppingCartRoundedIcon />,
     },
+    {
+      text: "Logout",
+      href:"/",
+      icon: <ShoppingCartRoundedIcon />,
+    },
   ];
 
   const navigate = useNavigate();
@@ -54,6 +59,10 @@ const Navbar = () => {
     navigate("/cart");
   };
 
+  const handleGoToProducts=()=>{
+    navigate("/products")
+  };
+
   return (
     <nav>
 
@@ -61,13 +70,13 @@ const Navbar = () => {
         <img src={icon} alt="CafeEase" width={200} />
       </div>
       <div className="navbar-links-container">
-        <a href="/products">Categories</a>
-        <a href="/products" >Products</a>
-        <a href="">Orders</a>
-        <a href="" onClick={handleGoToCart}>
+      <a href="/products"><button>Categories</button></a>
+        <a href="/products"><button>Products</button></a>
+        <a href="/products"><button>Orders</button></a>
+        <a ><button  onClick={handleGoToCart}>
           <BsCart2 className="navbar-cart-icon" />
-        </a>
-        <a href=""><button className="primary-button" onClick={handleLogout}>Logout</button></a>
+        </button></a>
+        <a href="/"><button id="primary-button" onClick={handleLogout}>Logout</button></a>
 
       </div>
       <div className="navbar-menu-container">

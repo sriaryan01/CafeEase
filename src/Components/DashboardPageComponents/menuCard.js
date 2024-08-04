@@ -12,7 +12,10 @@ const MenuCard = ({ product }) => {
 
   const addToast = () => {
     toast.success("Item added to cart.....", {
-      theme: "dark"
+      position: "bottom-left",
+      autoClose: 500,
+      closeOnClick: true,
+      theme: "dark",
     })
   };
 

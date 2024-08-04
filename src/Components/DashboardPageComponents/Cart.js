@@ -34,7 +34,10 @@ const Cart = () => {
 
     await placeOrderFromCart() 
     toast.success("Order Placed", {
-      theme: "dark"
+      position: "bottom-left",
+      autoClose: 500,
+      closeOnClick: true,
+      theme: "dark",
     })
 
     const cart = await fetchCart();
@@ -131,8 +134,11 @@ const CartItems = ({ item, setCart }) => {
       //   theme: "dark"
       // });
       if (qty==0){
-        toast.info("Item removed!!!", {
-          theme: "dark"
+        toast.info("Item removed!!!",{
+          position: "bottom-left",
+          autoClose: 500,
+          closeOnClick: true,
+          theme: "dark",
         });
       }
       var cart = await handleAddToCart(item.productId, qty);
@@ -144,7 +150,10 @@ const CartItems = ({ item, setCart }) => {
   const handleRemoveFromCart = async (productId) => {
     try {
       toast.info("Item removed!!!", {
-        theme: "dark"
+        position: "bottom-left",
+        autoClose: 500,
+        closeOnClick: true,
+        theme: "dark",
       });
       const updatedCart = await handleAddToCart(productId, 0);
       setCart(updatedCart);

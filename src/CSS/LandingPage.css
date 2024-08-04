@@ -103,8 +103,6 @@ body {
 
 nav {
   display: flex;
-  /* margin-left: auto;
-  margin-right: auto; */
   position: relative;
   padding-left: 10px;
   left: 5vw;
@@ -125,25 +123,25 @@ nav {
 
 .navbar-menu-container {
   display:  none;
-/* background-color: rgb(64, 7, 206); */
-/* size */
-  
+  padding-right: 30px;
 }
 
-.navbar-links-container a {
+.navbar-links-container button {
   margin-right: 3rem;
   text-decoration: none;
   color: black;
   font-size: 1.1rem;
   font-weight: 600;
-
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .navbar-links-container :hover {
   color: #fe9e0d;
 }
 
-.primary-button {
+#primary-button {
   padding: 0.9rem 1.75rem;
   background-color: white;
   outline: none;
@@ -161,7 +159,7 @@ nav {
   font-size: 1.15rem;
 }
 
-.primary-button:hover {
+#primary-button:hover {
   background-color: #fe9e0d;
   color: #f6f6f6;
 

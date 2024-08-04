@@ -21,6 +21,8 @@ const Category = () => {
       text: "Customer Rating : 4.9/5",
     },
   ];
+
+  
   return (
     <div className="category-section-wrapper" id="Category">
       <div className="category-section-top" >

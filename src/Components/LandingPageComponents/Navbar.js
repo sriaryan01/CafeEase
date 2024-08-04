@@ -24,25 +24,25 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
-      
+
       text: "Home",
-      href:"#Home",
+      href: "#Home",
       icon: <HomeIcon />,
     },
     {
-      
+
       text: "Category",
-      href:"#Category",
+      href: "#Category",
       icon: <Category />,
     },
     {
       text: "Contact",
-      href:"#Contact",
+      href: "#Contact",
       icon: <PhoneRoundedIcon />,
     },
     {
       text: "Login/Signup",
-      href:"#Login",
+      href: "#Login",
       icon: <LoginIcon />,
     }
   ];
@@ -53,18 +53,18 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links-container">
-        <a href="#Home">Home</a>
-        <a href="#Category" >Categories</a>
-        <a href="#Contact">Contact</a>
-        <a href="#Login"><button className="primary-button" type="submit" formaction="#Login">Login/Sign up</button></a>
+        <a href="#Home"><button>Home</button></a>
+        <a href="#Category"><button>Categories</button></a>
+        <a href="#Contact"><button>Contact</button></a>
+        <a href="#Login"><button id="primary-button" type="submit" >Login/Sign up</button></a>
       </div>
 
 
       <div className="navbar-menu-container">
-        
+
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
-      
+
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
         <Box
           sx={{ width: 250 }}

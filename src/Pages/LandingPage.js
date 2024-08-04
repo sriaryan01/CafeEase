@@ -8,6 +8,7 @@ import Navbar from "../Components/LandingPageComponents/Navbar";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function LandingPage() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function LandingPage() {
       <Navbar />
       <Home />
       <Login_Register />
+      
       <Category />
       <Contact />
       <Footer />
