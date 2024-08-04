@@ -21,19 +21,23 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
-      text: "Home",
+      text: "Categories",
+      href:"/products",
       icon: <HomeIcon />,
     },
     {
-      text: "About",
+      text: "Products",
+      href:"/products",
       icon: <InfoIcon />,
     },
     {
-      text: "Contact",
+      text: "Orders",
+      href:"",
       icon: <PhoneRoundedIcon />,
     },
     {
       text: "Cart",
+      href:"/cart",
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
@@ -57,13 +61,13 @@ const Navbar = () => {
         <img src={icon} alt="CafeEase" width={200} />
       </div>
       <div className="navbar-links-container">
-        <a href="#Home">Home</a>
-        <a href="/products" >Categories</a>
-        <a href="#Contact">Contact</a>
-        <a href="#Login" onClick={handleGoToCart}>
+        <a href="/products">Categories</a>
+        <a href="/products" >Products</a>
+        <a href="">Orders</a>
+        <a href="" onClick={handleGoToCart}>
           <BsCart2 className="navbar-cart-icon" />
         </a>
-        <a href="/cart"><button className="primary-button" onClick={handleLogout}>Logout</button></a>
+        <a href=""><button className="primary-button" onClick={handleLogout}>Logout</button></a>
 
       </div>
       <div className="navbar-menu-container">
@@ -79,7 +83,7 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton href={item.href}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
