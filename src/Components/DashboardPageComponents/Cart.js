@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchCart, handleAddToCart } from '../../Services/cart_service';
+import { placeOrderFromCart } from '../../Services/order_service';
+import useDebounce from '../../Services/helper';
 import { toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BannerBackground from "../../Assets/home-banner-background.png";
@@ -27,6 +29,18 @@ const Cart = () => {
     getCart();
   }, []);
 
+  const handlePlaceOrder = async () =>{
+    
+    await placeOrderFromCart() 
+    toast.success("Order Placed", {
+      theme: "dark"
+    })
+
+    const cart = await fetchCart();
+    setCart(cart);
+
+}
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -36,45 +50,78 @@ const Cart = () => {
   }
 
   return (
+
     <div className='cart-container'>
-    <div className='card-container'>
+      {
+        IsCartEmpty(cart.items) ? <h1>No Items in Cart</h1> : <h2>Your Cart</h2>
+      }
       <div className="home-bannerImage-container">
-      <img src={BannerBackground} alt="" />
-    </div>
-      <div>Your Cart</div>
-      <div>
+        <img src={BannerBackground} alt="" />
+      </div>
+      
+      <div className='inner-cart-container'>
+        
+
         {cart.items.map(item => (
           <CartItems key={item.productId} item={item} setCart={setCart} />
         ))}
+
+        <div className='total-container'>
+          <div className='left-side'>
+            <div className='PricePerUnit'>Total Amount - <p className='ProductPrice'>INR {cart.totalAmount}</p></div>
+          </div>
+          <div className='right-side'>
+            <button className='card-tag place-ordr-btn subtle' onClick={handlePlaceOrder} disabled={IsCartEmpty(cart.items)} >Place Order</button>        
+          </div>
+        </div>
+
       </div>
-    </div>
+
     </div>
   );
 };
 
+const IsCartEmpty = (items) =>{
+  console.log(items.length)
+  return items.length === 0
+}  
 
 const CartItems = ({ item, setCart }) => {
   var [quantity, setQuantity] = useState(1);
+  const [inputValue, setInputValue] = useState(item.quantity);
+  const debouncedQuantity = useDebounce(inputValue, 1000); // 2000ms = 2 seconds
+
   quantity = item.quantity;
 
-  const handleQuantityChange = async (e) => {
-    
-    const qty = e.target.value;
-    
-    if (qty != '') {
+  useEffect(() => {
+    if (debouncedQuantity !== item.quantity) {
+      handleQuantityChange(debouncedQuantity);
+    }
+  }, [debouncedQuantity]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleQuantityChange = async (qty) => {
       
-      toast.success("Quantity updated...", {
-        theme: "dark"
-      });
+      // toast.success("Quantity updated...", {
+      //   theme: "dark"
+      // });
+      if (qty==0){
+        toast.info("Item removed!!!", {
+          theme: "dark"
+        });
+      }
       var cart = await handleAddToCart(item.productId, qty);
       console.log(cart)
       setCart(cart)
-    }
+    // }
   };
 
   const handleRemoveFromCart = async (productId) => {
     try {
-      toast.error("Item removed!!!", {
+      toast.info("Item removed!!!", {
         theme: "dark"
       });
       const updatedCart = await handleAddToCart(productId, 0);
@@ -92,7 +139,7 @@ const CartItems = ({ item, setCart }) => {
         <div className='OverallPrice'>Overall Price - <p className='ProductPrice overall'>INR {item.price}</p></div>
       </div>
       <div className='addCartOptions right-side'>
-        <input type="number" id="quantity" className='ProductQuantity item-quantity' name="quantity" placeholder='Quantity' min="0" defaultValue={1} value={quantity} onChange={(e) => handleQuantityChange(e)} />
+        <input type="number" id="quantity" className='ProductQuantity item-quantity' name="quantity" placeholder='Quantity' min="0" value={inputValue} onChange={handleInputChange} />
         <button className='card-tag subtle' onClick={() => handleRemoveFromCart(item.productId)}>Remove from Cart</button>
       </div>
     </div>

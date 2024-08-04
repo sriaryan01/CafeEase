@@ -1,5 +1,4 @@
 import React from 'react';
-import BannerBackground from "../../Assets/home-banner-background.png";
 
 const Orders = () => {
   return <div>Manage your orders here

@@ -33,7 +33,7 @@ const Login_Register = () => {
       console.log(resp);
       console.log("Success log");
       // toast.success("Login Successfull");
-      navigate('/dashboard');
+      navigate('/products');
       // Redirect or perform other actions after successful login
     }).catch((error) => {
       console.log(error);

@@ -11,19 +11,16 @@ import Footer from '../Components/DashboardPageComponents/Footer';
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const Dashboard = () => {
+const ProductDashboard = () => {
   return (
     <div className="App" >
       {/* <ToastContainer/> */}
       <Navbar />
-
       <Home />
       <Products />
-      <Orders />
-      <Cart/>
       <Footer />
     </div>
   );
 };
 
-export default Dashboard;
+export default ProductDashboard;
