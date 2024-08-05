@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import LandingPage from "./Pages/LandingPage";
 import ProductsDashBoard from "./Pages/UserProductsPage";
 import CartDashboard from "./Pages/UserCartPage"
-
+import AdminPage from "./Pages/AdminPage";
 import { createBrowserRouter, RouteProvider, Route, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartDashboard />
+  },
+  {
+    path:"/admin",
+    element: <AdminPage/>
   }
 ]);
 

@@ -46,6 +46,7 @@ export const getToken = () => {
 
 export const logout=()=>{
     Cookies.remove('token');
+    
     console.log("Token deleted");
     toast.success("Logged out successfully");
 }

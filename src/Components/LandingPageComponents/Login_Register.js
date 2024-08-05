@@ -3,9 +3,10 @@ import AboutBackground from "../../Assets/login-background.png";
 import AboutBackgroundImage from "../../Assets/login-background-image.png";
 import { signUp, login } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {jwtDecode} from 'jwt-decode';
+import Cookies from 'js-cookie';
 
 
 const Login_Register = () => {
@@ -13,10 +14,10 @@ const Login_Register = () => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
+  const [role, setRole] = useState('');
 
   const navigate = useNavigate();
 
-  const notify = () => toast("Wow so easy!");
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -30,15 +31,26 @@ const Login_Register = () => {
     };
 
     login(loginDetails).then((resp) => {
-      console.log(resp);
       console.log("Success log");
-      // toast.success("Login Successfull");
-      navigate('/products');
-      // Redirect or perform other actions after successful login
+      const token= Cookies.get('token');
+      var decodedToken="";
+      
+      if (resp) {
+        try {
+          decodedToken = jwtDecode(resp);
+          console.log(decodedToken.role);
+        } catch (error) {
+          console.error('Error decoding JWT:', error);
+        }
+      }
+      if(decodedToken.role=='user')
+        navigate('/products');
+      else if(decodedToken.role=='admin')
+        navigate('/admin');
+      
+
     }).catch((error) => {
-      console.log(error);
-      console.log("Error log");
-      // toast.error("Wrong id or password");
+      console.log("Error from login :",error);
     });
   };
 
