@@ -130,7 +130,7 @@ body {
   padding: 20px;
 }
 
-nav {
+#dashboard-page-nav {
   display: flex;
   position: relative;
   padding-left: 10px;
@@ -156,7 +156,8 @@ nav {
 }
 
 .navbar-links-container button {
-  margin-right: 3rem;
+
+  margin-right: 4rem;
   text-decoration: none;
   color: black;
   font-size: 1.1rem;
@@ -171,7 +172,6 @@ nav {
 }
 
 #primary-button {
-  padding: 0.9rem 1.75rem;
   background-color: white;
   outline: none;
   border: none;
@@ -194,12 +194,12 @@ nav {
 }
 
 .navbar-menu-container svg {
-  font-size: 1.5rem;
+  font-size: 30px;
   cursor: pointer;
 }
 
 @media (max-width: 1000px) {
-  .navbar-links-container a {
+  .navbar-links-container button {
     margin-right: 1rem;
     font-size: 1rem;
   }
@@ -214,13 +214,6 @@ nav {
 }
 
 @media (max-width: 800px) {
-  .nav-logo-container {
-    max-width: 140px;
-    padding-top: 10px;
-    padding-left: 10px;
-
-
-  }
 
   .navbar-links-container {
     display: none;

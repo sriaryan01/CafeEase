@@ -64,7 +64,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav id="dashboard-page-nav">
 
       <div className="nav-logo-container">
         <img src={icon} alt="CafeEase" width={200} />

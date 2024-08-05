@@ -1,11 +1,50 @@
-import React from 'react'
+import React from 'react';
+import { Route, NavLink, Routes } from 'react-router-dom';
+import Product from '../Components/AdminPageComponents/Product';
+import Category from '../Components/AdminPageComponents/Category';
+import User from '../Components/AdminPageComponents/User';
+import Order from '../Components/AdminPageComponents/Order';
+import Bill from '../Components/AdminPageComponents/Bill';
+import "../CSS/AdminPage.css";
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../Services/user_service';
+
+
 
 const AdminPage = () => {
-  return (
-    <div>AdminPage <br />
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat hic excepturi totam modi, nulla nihil, facilis, placeat aperiam nemo mollitia in reprehenderit. Sunt accusantium maxime a error. Ea cumque accusantium sed, minus id harum minima aliquam magni! Impedit architecto maiores optio quidem minus assumenda quo deserunt iure laborum numquam dolorem eius incidunt sapiente explicabo nam, illo unde doloremque nostrum a accusamus? Saepe dolorum atque ab sint facilis ducimus soluta ad blanditiis vitae! Soluta id consequuntur dolores fugiat minima dolore tenetur pariatur asperiores perferendis, distinctio iusto odit a illum, eos amet molestiae rerum tempora inventore adipisci? In doloremque temporibus officiis impedit!
-    </div>
-  )
-}
+  const navigate=useNavigate();
 
-export default AdminPage
+const handleLogout=()=>{
+
+  navigate('/');
+  logout();
+};
+
+  return (
+    <div className="admin-page">
+      <nav className="admin-page-nav">
+        <ul>
+          <li><NavLink to="/admin/products">Product</NavLink></li>
+          <li><NavLink to="/admin/category">Category</NavLink></li>
+          <li><NavLink to="/admin/user">User</NavLink></li>
+          <li><NavLink to="/admin/order">Order</NavLink></li>
+          <li><NavLink to="/admin/bill">Bill</NavLink></li>
+          <li><NavLink to="/admin">Go Home</NavLink></li>
+          <li><NavLink to="/" onClick={handleLogout}>Logout</NavLink></li>
+        </ul>
+      </nav>
+      <div className="admin-content">
+        <Routes>
+          <Route path="/products" element={<Product />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/bill" element={<Bill />} />
+          <Route path="/" element={<h3>Welcome to Admin Dashboard!</h3>} />
+        </Routes>
+      </div>
+    </div>
+  );
+};
+
+export default AdminPage;

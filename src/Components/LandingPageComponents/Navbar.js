@@ -47,7 +47,7 @@ const Navbar = () => {
     }
   ];
   return (
-    <nav>
+    <nav id="landing-page-nav"> 
       <div className="nav-logo-container">
         <img src={icon} alt="CafeEase" width={200} />
       </div>

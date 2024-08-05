@@ -25,9 +25,9 @@ const router = createBrowserRouter([
     element: <CartDashboard />
   },
   {
-    path:"/admin",
+    path:"/admin/*",
     element: <AdminPage/>
-  }
+  },
 ]);
 
 
