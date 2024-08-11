@@ -4,7 +4,10 @@ import LandingPage from "./Pages/LandingPage";
 import ProductsDashBoard from "./Pages/UserProductsPage";
 import CartDashboard from "./Pages/UserCartPage"
 import AdminPage from "./Pages/AdminPage";
-import { createBrowserRouter, RouteProvider, Route, RouterProvider } from "react-router-dom";
+import Unauthorized from "./Pages/Unauthorized";
+import NotFound from "./Pages/NotFound";
+import ProtectedRoute from "./Services/ProtectedRoute";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,9 +28,17 @@ const router = createBrowserRouter([
     element: <CartDashboard />
   },
   {
-    path:"/admin/*",
-    element: <AdminPage/>
+    path: "/admin/*",
+    element: <ProtectedRoute element={<AdminPage />} allowedRoles={['admin']} />, // Protecting the admin route
   },
+  {
+    path: "/unauthorized",
+    element: <Unauthorized />, // Adding the unauthorized route
+  },
+  {
+    path: "/*",
+    element: <NotFound />, // Adding the notfound route
+  }
 ]);
 
 

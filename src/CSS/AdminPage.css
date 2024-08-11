@@ -29,6 +29,22 @@
     text-decoration: none;
 }
 
+.admin-page-nav button{
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    padding-left: 10px;
+    cursor:pointer;
+    height: 42px;
+    width: 170px;
+    text-align: left;
+
+}
+.admin-page-nav button:hover{
+    background-color: #e90a0a;
+    color: white;
+}
+
 .admin-page-nav a:hover {
     background-color: #e90a0a;
     color: #f6f6f6;

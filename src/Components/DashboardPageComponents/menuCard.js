@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "../../CSS/DashboardPage.css";
 import { handleAddToCart } from "../../Services/cart_service"
-import { toast } from 'react-toastify';
+import { toast ,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -11,19 +11,20 @@ const MenuCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
   const addToast = () => {
+
+    console.log("Item added");
+
     toast.success("Item added to cart.....", {
       position: "bottom-left",
-      autoClose: 500,
+      autoClose: 800,
       closeOnClick: true,
       theme: "dark",
-    })
+    });
   };
 
-  // const handleQuantityChange = (e) => {
-  //   setQuantity(e.target.value);
-  // };
   return (
     <div className='Card'>
+      <ToastContainer/>
       <h3 className='ProductName'>{product.name}</h3>
       <p className='ProductDescription'>{product.description}</p>
       <div className='ProductPrice'>INR {product.price}</div>

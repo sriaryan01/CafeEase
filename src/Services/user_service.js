@@ -1,7 +1,7 @@
 import { myAxios } from "./helper";
 import Cookies from 'js-cookie';
 
-import { toast, ToastContainer } from 'react-toastify';
+import { toast,} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const signUp = (payload) => {
@@ -16,8 +16,7 @@ export const login = async (payload) => {
     try {
         const response =  await myAxios.post("user/login", payload);
         const data = response.data;
-        console.log(data.message);
-        // Extract token from the response message
+
         if (data.message) {
             const tokenMatch = data.message.match(/token\s*:\s*(eyJhbGciOiJIUzI1NiJ9\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+)/);
             if (tokenMatch && tokenMatch[1]) {
@@ -40,6 +39,12 @@ export const login = async (payload) => {
     }
 };
 
+export const forgotPassword=(payload)=>{
+    return myAxios
+        .post("/user/forgotPassword", payload)
+        .then((response) => response.data);
+};
+
 export const getToken = () => {
     return Cookies.get('token');
 };
@@ -48,5 +53,5 @@ export const logout=()=>{
     Cookies.remove('token');
     
     console.log("Token deleted");
-    toast.success("Logged out successfully");
+    // toast.success("Logged out successfully");
 }

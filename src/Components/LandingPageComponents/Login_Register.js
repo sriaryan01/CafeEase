@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AboutBackground from "../../Assets/login-background.png";
 import AboutBackgroundImage from "../../Assets/login-background-image.png";
-import { signUp, login } from "../../Services/user_service";
+import { signUp, login, forgotPassword } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,14 +31,13 @@ const Login_Register = () => {
     };
 
     login(loginDetails).then((resp) => {
-      console.log("Success log");
       const token= Cookies.get('token');
       var decodedToken="";
       
       if (resp) {
         try {
           decodedToken = jwtDecode(resp);
-          console.log(decodedToken.role);
+          console.log("role : ",decodedToken.role);
         } catch (error) {
           console.error('Error decoding JWT:', error);
         }
@@ -52,6 +51,23 @@ const Login_Register = () => {
     }).catch((error) => {
       console.log("Error from login :",error);
     });
+  };
+
+  const handleForgotPassword =()=>{
+    const map= new Map();
+    map.set('email',email);
+    const payload = Object.fromEntries(map);
+
+    forgotPassword(payload).then((resp)=>{
+      console.log(resp);
+
+      toast.success(resp.message,{
+        position: "bottom-left",
+        autoClose: 500,
+        closeOnClick: true,
+        theme: "dark",
+      });
+    })
   };
 
   const handleRegisterSubmit = (e) => {
@@ -74,12 +90,22 @@ const Login_Register = () => {
       console.log(resp);
       
       console.log("Success log");
-      toast.success("User registered successfully");
+      toast.success("User registered successfully",{
+        position: "bottom-left",
+        autoClose: 500,
+        closeOnClick: true,
+        theme: "dark",
+      });
 
     }).catch((error) => {
       console.log(error);
       console.log("Error log")
-      toast.error("Something went wrong");
+      toast.error("Something went wrong",{
+        position: "bottom-left",
+        autoClose: 500,
+        closeOnClick: true,
+        theme: "dark",
+      });
     })
   };
 
@@ -121,7 +147,7 @@ const Login_Register = () => {
                 <label htmlFor="email">Email:</label>
                 <input
                   type="email"
-                  id="email"
+                  id="login_email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -131,7 +157,7 @@ const Login_Register = () => {
                 <label htmlFor="password">Password:</label>
                 <input
                   type="password"
-                  id="password"
+                  id="login_password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -142,7 +168,7 @@ const Login_Register = () => {
 
             </form>
             <div className="form-links">
-              <div><a href="#login" id="forgot-password"><p > Forgot Password?</p></a> </div>
+              <div><a href="#login" id="forgot-password" onClick={handleForgotPassword}><p > Forgot Password?</p></a> </div>
               <div><a href="#login" id="" onClick={registerLink}><p>Don't have an account?</p> </a></div>
             </div>
           </div>

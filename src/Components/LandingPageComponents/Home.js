@@ -4,6 +4,9 @@ import BannerImage from "../../Assets/home-banner-image.png";
 import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
+
+  
+
   return (
     <div className="home-container" >
       <div className="home-banner-container">
@@ -20,6 +23,7 @@ const Home = () => {
           <a href="#Login"><button className="secondary-button">
             Order Now <FiArrowRight />{""}
           </button></a>
+
         </div>
         <div className="home-image-section">
           <img src={BannerImage} alt="" />

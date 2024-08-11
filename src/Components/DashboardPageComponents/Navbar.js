@@ -15,6 +15,7 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { logout } from "../../Services/user_service";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
@@ -22,27 +23,27 @@ const Navbar = () => {
   const menuOptions = [
     {
       text: "Categories",
-      href:"/products",
+      href: "/products",
       icon: <HomeIcon />,
     },
     {
       text: "Products",
-      href:"/products",
+      href: "/products",
       icon: <InfoIcon />,
     },
     {
       text: "Orders",
-      href:"",
+      href: "",
       icon: <PhoneRoundedIcon />,
     },
     {
       text: "Cart",
-      href:"/cart",
+      href: "/cart",
       icon: <ShoppingCartRoundedIcon />,
     },
     {
       text: "Logout",
-      href:"/",
+      href: "/",
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
@@ -52,14 +53,22 @@ const Navbar = () => {
   const handleLogout = (e) => {
     logout();
     navigate('/');
+    setTimeout(() => {
+      toast.success("Logged out successfully", {
+        position: "top-left",
+        autoClose: 800,
+        closeOnClick: true,
+        theme: "dark",
+      });
+    }, 100);
     console.log("Logout Successfull");
   };
 
-  const handleGoToCart=()=>{
+  const handleGoToCart = () => {
     navigate("/cart");
   };
 
-  const handleGoToProducts=()=>{
+  const handleGoToProducts = () => {
     navigate("/products")
   };
 
@@ -70,13 +79,13 @@ const Navbar = () => {
         <img src={icon} alt="CafeEase" width={200} />
       </div>
       <div className="navbar-links-container">
-      <a href="/products"><button>Categories</button></a>
-        <a href="/products"><button>Products</button></a>
-        <a href="/products"><button>Orders</button></a>
-        <a ><button  onClick={handleGoToCart}>
+        <button onClick={handleGoToProducts}>Categories</button>
+        <button onClick={handleGoToProducts}>Products</button>
+        <button onClick={handleGoToProducts}>Orders</button>
+        <button onClick={handleGoToCart}>
           <BsCart2 className="navbar-cart-icon" />
-        </button></a>
-        <a href="/"><button id="primary-button" onClick={handleLogout}>Logout</button></a>
+        </button>
+        <button id="primary-button" onClick={handleLogout}>Logout</button>
 
       </div>
       <div className="navbar-menu-container">

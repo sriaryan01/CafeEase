@@ -1,8 +1,12 @@
 import React from 'react'
-
+import Navbar from './Navbar'
 const Order = () => {
   return (
-    <div>Order</div>
+    <div className='admin-page'>
+      <Navbar/>
+      
+      Order
+      </div>
   )
 }
 

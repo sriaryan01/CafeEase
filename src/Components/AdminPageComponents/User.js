@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const User = () => {
   return (
-    <div>User</div>
+    <div className='admin-page'>
+      <Navbar></Navbar>
+      
+      User</div>
   )
 }
 
