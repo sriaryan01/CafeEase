@@ -1,5 +1,5 @@
 // MenuCard.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../CSS/DashboardPage.css";
 import { handleAddToCart } from "../../Services/cart_service"
 import { toast ,ToastContainer} from 'react-toastify';
@@ -7,13 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const MenuCard = ({ product }) => {
+const MenuCard = ({ product, cartItemsIdToQuantityMap }) => {
   const [quantity, setQuantity] = useState(1);
 
   const addToast = () => {
-
-    console.log("Item added");
-
     toast.success("Item added to cart.....", {
       position: "bottom-left",
       autoClose: 800,
@@ -21,6 +18,11 @@ const MenuCard = ({ product }) => {
       theme: "dark",
     });
   };
+
+  useEffect(() => {
+    const productQuantity = cartItemsIdToQuantityMap.get(product.id);
+    setQuantity(productQuantity !== undefined ? productQuantity : 1);
+  }, [cartItemsIdToQuantityMap, product.id]);
 
   return (
     <div className='Card'>
@@ -30,7 +32,7 @@ const MenuCard = ({ product }) => {
       <div className='ProductPrice'>INR {product.price}</div>
       <div className='CategoryName'>{product.categoryName}</div>
       <div className='addCartOptions'>
-        <input type="number" id="quantity" className='ProductQuantity' name="quantity" placeholder='Quantity' min="0" defaultValue={1} value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+        <input type="number" id="quantity" className='ProductQuantity' name="quantity" placeholder='Quantity' min="0" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
         <button className='card-tag subtle' onClick={() => { handleAddToCart(product.id, quantity); addToast(); }}>Add to Cart</button>
       </div>
     </div>

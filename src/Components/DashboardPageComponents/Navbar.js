@@ -23,7 +23,7 @@ const Navbar = () => {
   const menuOptions = [
     {
       text: "Categories",
-      href: "/products",
+      href: "/categories",
       icon: <HomeIcon />,
     },
     {
@@ -33,7 +33,7 @@ const Navbar = () => {
     },
     {
       text: "Orders",
-      href: "",
+      href: "/orders",
       icon: <PhoneRoundedIcon />,
     },
     {
@@ -72,6 +72,13 @@ const Navbar = () => {
     navigate("/products")
   };
 
+  const handleGoToCategories = () => {
+    navigate("/categories")
+  };
+
+  const handleGoToOrders = () => {
+    navigate("/orders")
+  };
   return (
     <nav id="dashboard-page-nav">
 
@@ -79,9 +86,9 @@ const Navbar = () => {
         <img src={icon} alt="CafeEase" width={200} />
       </div>
       <div className="navbar-links-container">
-        <button onClick={handleGoToProducts}>Categories</button>
+        <button onClick={handleGoToCategories}>Categories</button>
         <button onClick={handleGoToProducts}>Products</button>
-        <button onClick={handleGoToProducts}>Orders</button>
+        <button onClick={handleGoToOrders}>My Orders</button>
         <button onClick={handleGoToCart}>
           <BsCart2 className="navbar-cart-icon" />
         </button>

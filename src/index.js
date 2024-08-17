@@ -10,6 +10,8 @@ import ProtectedRoute from "./Services/ProtectedRoute";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CategoriesDashboard from "./Pages/UserCategoriesPage";
+import OrdersDashboard from "./Pages/UserOrdersPage";
 
 
 const router = createBrowserRouter([
@@ -19,14 +21,30 @@ const router = createBrowserRouter([
   },
 
   {
+    path: "/categories",
+    element: <CategoriesDashboard />
+  },
+
+  {
     path: "/products",
     element: <ProductsDashBoard />
+  },
+
+  {
+    path: "/products/category/:id",
+    element: <ProductsDashBoard/>
   },
 
   {
     path: "/cart",
     element: <CartDashboard />
   },
+
+  {
+    path: "/orders",
+    element: <OrdersDashboard />
+  },
+
   {
     path: "/admin/*",
     element: <ProtectedRoute element={<AdminPage />} allowedRoles={['admin']} />, // Protecting the admin route

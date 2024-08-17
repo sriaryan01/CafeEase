@@ -70,7 +70,6 @@ body {
 }
 
 .ProductQuantity {
-  /* float: right; */
   width: 60px;
   margin: 5px 5px 0;
   border: 2px solid #fe9e0d;
@@ -108,6 +107,8 @@ body {
 .ProductDescription {
   font-size: 0.9em;
   color: #666;
+  height: 80px;
+  text-overflow: clip;
 }
 
 .ProductPrice {
@@ -198,6 +199,52 @@ body {
   cursor: pointer;
 }
 
+.calendars {
+  display: flex;
+  gap: 5px;
+}
+
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Spinner.css */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 90vw;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1000px) {
   .navbar-links-container button {
     margin-right: 1rem;
@@ -214,6 +261,13 @@ body {
 }
 
 @media (max-width: 800px) {
+  .nav-logo-container {
+    max-width: 140px;
+    padding-top: 10px;
+    padding-left: 10px;
+
+
+  }
 
   .navbar-links-container {
     display: none;
@@ -333,6 +387,11 @@ body {
 
   .App {
     max-width: 95vw;
+  }
+
+  .calendars {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 

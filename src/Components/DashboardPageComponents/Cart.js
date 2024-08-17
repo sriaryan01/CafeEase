@@ -6,6 +6,7 @@ import { toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BannerBackground from "../../Assets/home-banner-background.png";
 import EmptyCart from "../../Assets/emptycart.svg";
+import Spinner from './Spinner';
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -46,7 +47,7 @@ const Cart = () => {
 }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Spinner/></div>;
   }
 
   if (error) {
@@ -60,7 +61,6 @@ const Cart = () => {
       <div className="home-bannerImage-container bg-container">
         <img src={BannerBackground} alt="" className='backgoround-img'/>
       </div>
-      <h1>Your Cart : </h1>
 
       <div className='inner-cart-container'>
         {
@@ -85,9 +85,14 @@ const Cart = () => {
             </>
           ) : (
             <>
+              <div className='cart-heading'>
+              <h2>Your Cart</h2>
+              </div>
+              <div className='cart-items-container'>
               {cart.items.map(item => (
                 <CartItems key={item.productId} item={item} setCart={setCart} />
               ))}
+              </div>
 
               <div className='total-container'>
                 <div className='left-side'>
@@ -166,12 +171,12 @@ const CartItems = ({ item, setCart }) => {
     <div className='Cart-Card'>
       <div className='left-side'>
         <h3 className='ProductName'>{item.productName}</h3>
-        <div className='PricePerUnit'>Price Per Unit - <p className='ProductPrice'>INR {item.pricePerUnit}</p></div>
-        <div className='OverallPrice'>Overall Price - <p className='ProductPrice overall'>INR {item.price}</p></div>
+        <div>Price Per Unit - <p className='ProductPrice'>INR {item.pricePerUnit}</p></div>
+        <div>Overall Price - <p className='ProductPrice overall'>INR {item.price}</p></div>
       </div>
       <div className='addCartOptions right-side'>
         <input type="number" id="quantity" className='ProductQuantity item-quantity' name="quantity" placeholder='Quantity' min="0" value={inputValue} onChange={handleInputChange} />
-        <button className='card-tag subtle' onClick={() => handleRemoveFromCart(item.productId)}>Remove from Cart</button>
+        <button className='remove-item-btn subtle' onClick={() => handleRemoveFromCart(item.productId)}>Remove from Cart</button>
       </div>
     </div>
   );
