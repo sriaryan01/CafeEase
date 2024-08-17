@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { productList, productListByCategory } from '../../Services/product_service';
 import { fetchCart } from '../../Services/cart_service';
-import MenuCard from './MenuCard';
+import Menu from './Menu';
 import BannerBackground from "../../Assets/home-banner-background.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -55,7 +55,7 @@ const Products = () => {
         <img src={BannerBackground} alt="" />
       </div>
       {products.map(product => (
-        <MenuCard key={product.id} product={product} cartItemsIdToQuantityMap={cartItemsIdToQuantityMap}/>
+        <Menu key={product.id} product={product} cartItemsIdToQuantityMap={cartItemsIdToQuantityMap}/>
       ))}
     </div>
   );

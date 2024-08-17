@@ -1,4 +1,4 @@
-// MenuCard.js
+
 import React, { useState, useEffect } from 'react';
 import "../../CSS/DashboardPage.css";
 import { handleAddToCart } from "../../Services/cart_service"
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const MenuCard = ({ product, cartItemsIdToQuantityMap }) => {
+const Menu = ({ product, cartItemsIdToQuantityMap }) => {
   const [quantity, setQuantity] = useState(1);
 
   const addToast = () => {
@@ -39,4 +39,4 @@ const MenuCard = ({ product, cartItemsIdToQuantityMap }) => {
   );
 };
 
-export default MenuCard;
+export default Menu;
