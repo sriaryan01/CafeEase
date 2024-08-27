@@ -94,6 +94,7 @@ img {
 
 body {
   max-width: 100%;
+  /* background-color: aqua; */
   overflow-x: hidden;
 }
 
@@ -114,12 +115,11 @@ body {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 1;
-  width: 90vw;
+  /* width: 90vw; */
 
   border: 2px solid #ddd;
   border-radius: 0px 0px 30px 30px;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
-
 }
 
 .navbar-menu-container {
