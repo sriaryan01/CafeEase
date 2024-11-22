@@ -6,6 +6,7 @@ import Footer from '../Components/DashboardPageComponents/Footer';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from "../Components/DashboardPageComponents/Home";
 import Category from "../Components/DashboardPageComponents/Category";
 
 const CategoriesDashboard = () => {
@@ -13,6 +14,7 @@ const CategoriesDashboard = () => {
     <div className="App" >
       <ToastContainer/>
       <Navbar />
+      <Home/>
       <Category/>
       <Footer />
     </div>
