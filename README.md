@@ -55,11 +55,10 @@ CREATE DATABASE cafedb;
 ### Backend :
 #### 1. Clone the repository:
   ```
-git clone https://github.com/username/cafeease-backend.git 
+git clone https://github.com/Adars987h/cafeEase.git 
 ``` 
 #### 2. Navigate to the project directory and build the application:
 ```
-cd cafeease-backend  
 mvn clean install  
 ```
 #### 3. Configure the database connection in application.properties.
