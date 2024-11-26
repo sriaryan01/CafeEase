@@ -1,5 +1,6 @@
 # CafeEase - Restaurant Management System
 CafeEase is a full-stack restaurant management system designed to streamline and optimize restaurant operations. The project leverages a Spring Boot backend and a ReactJS frontend to provide a robust, scalable, and user-friendly solution.
+![image CafeEase](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/CafeEase.png)
 
 ## Features:
 - ### Role-Based Access Control ### 
@@ -86,12 +87,29 @@ npm start
  inventory management, placing oreders, generating bills.
 
 ### Screenshots
-Login Page with Role-Based Authentication
 
-Dashboard Overview
+#### Login & Registration form with Role-Based Authentication
+![image Login Form with Role-Based Authentication](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Login%20Form.png)
+![image Registretion Form with Role-Based Authentication](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Registration%20Form.png)
 
+#### Products Page
+![image Products Page](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Products.png)
+
+#### User Cart
+![image User Cart](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Billing%20Page.png)
 User-Friendly Product Management System
 
-Real-Time Notifications with Toaster Popups
+#### Orders 
+![image Orders](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Previous%20Orders.png)
+
+#### Real-Time Email Notifications 
+![image Email Notification](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Email%20Notification.png)
+![image Email Bill](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Email%20Bill.png)
+
+#### Toasts
+![Toasts](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Toasts.png)
+
+#### Admin Product Page
+![image Admin Product Page](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Admin%20Product%20Page.png)
 ### Contributing
 Contributions are welcome! Please create a pull request with your changes.
