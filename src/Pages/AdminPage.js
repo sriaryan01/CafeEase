@@ -7,6 +7,7 @@ import Order from '../Components/AdminPageComponents/Order';
 import Bill from '../Components/AdminPageComponents/Bill';
 import Home from '../Components/AdminPageComponents/Home';
 import NotFound from './NotFound';
+import Navbar from '../Components/AdminPageComponents/Navbar'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../CSS/AdminPage.css";
@@ -16,7 +17,10 @@ import "../CSS/AdminPage.css";
 const AdminPage = () => {
 
   return (
-    <div >
+    <div className='admin-dashboard'>
+      <div className="vertical-navbar">
+        <Navbar />
+      </div>
       <ToastContainer/>
       <div className="admin-content">
         <Routes>
