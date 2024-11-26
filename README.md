@@ -97,7 +97,6 @@ npm start
 
 #### User Cart
 ![image User Cart](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Billing%20Page.png)
-User-Friendly Product Management System
 
 #### Orders 
 ![image Orders](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Previous%20Orders.png)
@@ -111,5 +110,6 @@ User-Friendly Product Management System
 
 #### Admin Product Page
 ![image Admin Product Page](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Admin%20Product%20Page.png)
+![image Admin Product Add Manage](https://github.com/Adars987h/cafeEase_UI/blob/main/Screenshots/Admin%20Product%20Add%20Manage.png)
 ### Contributing
 Contributions are welcome! Please create a pull request with your changes.
