@@ -84,15 +84,11 @@ export const uploadGlbFile = async (productId, glbFile) => {
   formData.append("file", glbFile);
 
   try {
-    await myAxios.post(
-      `http://localhost:8081/product/uploadGlb/${productId}`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    await myAxios.post(`/product/uploadGlb/${productId}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     alert("3D model uploaded successfully!");
   } catch (error) {
     console.error("Error uploading GLB:", error);
